@@ -50,19 +50,19 @@ function floatToAny (float value) returns (any) {
 
 function stringToInt(string value) returns (int) {
     int result;
-    result, _ = <int>value;
+    result =? <int>value;
     return result;
 }
 
 function stringToFloat(string value) returns (float) {
     float result;
-    result, _ = <float>value;
+    result =? <float>value;
     return result;
 }
 
 function stringToBoolean(string value) returns (boolean) {
     boolean result;
-    result, _ = <boolean>value;
+    result = <boolean>value;
     return result;
 }
 
