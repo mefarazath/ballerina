@@ -1,3 +1,5 @@
+import ballerina/io;
+
 function intToFloat (int value) returns (float) {
     float result;
     result = <float>value;
@@ -18,7 +20,7 @@ function intToBoolean (int value) returns (boolean) {
 
 function intToAny (int value) returns (any) {
     any result;
-    result = (any)value;
+    result = <any>value;
     return result;
 }
 
@@ -42,7 +44,7 @@ function floatToBoolean (float value) returns (boolean) {
 
 function floatToAny (float value) returns (any) {
     any result;
-    result = (any)value;
+    result = <any>value;
     return result;
 }
 
@@ -66,7 +68,7 @@ function stringToBoolean(string value) returns (boolean) {
 
 function stringToAny(string value) returns (any) {
     any result;
-    result = (any)value;
+    result = <any>value;
     return result;
 }
 
@@ -90,13 +92,13 @@ function booleanToString(boolean value) returns (string) {
 
 function booleanToAny(boolean value) returns (any) {
     any result;
-    result = (any)value;
+    result = <any>value;
     return result;
 }
 
 function blobToAny(blob value) returns (any) {
     any result;
-    result = (any)value;
+    result = <any>value;
     return result;
 }
 
@@ -104,7 +106,7 @@ function anyToInt () returns (int) {
     int i = 5;
     any a = i;
     int value;
-    value, _ = (int)a;
+    value =? <int>a;
     return value;
 }
 
@@ -112,7 +114,7 @@ function anyToFloat () returns (float) {
     float f = 5.0;
     any a = f;
     float value;
-    value, _ = (float)a;
+    value =? <float>a;
     return value;
 }
 
@@ -120,7 +122,7 @@ function anyToString () returns (string) {
     string s = "test";
     any a = s;
     string value;
-    value, _ = (string)a;
+    value =? <string>a;
     return value;
 }
 
@@ -128,7 +130,7 @@ function anyToBoolean () returns (boolean) {
     boolean b;
     any a = b;
     boolean value;
-    value, _ = (boolean)a;
+    value =? <boolean>a;
     return value;
 }
 
@@ -136,7 +138,7 @@ function anyToBlob (blob data) returns (blob) {
     blob b = data;
     any a = b;
     blob value;
-    value, _ = (blob)a;
+    value =? <blob>a;
     return value;
 }
 
